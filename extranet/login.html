@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Acceso Extranet — Vidriería A&E Cajusol H</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/extranet.css" />
+</head>
+<body class="login-body">
+
+  <main class="login-card" aria-labelledby="login-title">
+    <div class="logo-circle" aria-hidden="true"><span class="logo-text">a<span>&</span>e</span></div>
+    <h1 id="login-title">Acceso Extranet</h1>
+    <p class="login-sub">Panel de administración del sitio web</p>
+
+    <form id="loginForm" novalidate>
+      <div class="form-group">
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario" autocomplete="username" required maxlength="60" />
+      </div>
+      <div class="form-group">
+        <label for="clave">Contraseña</label>
+        <input type="password" id="clave" name="clave" autocomplete="current-password" required maxlength="128" />
+      </div>
+      <button type="submit" class="btn-login" id="loginBtn">INGRESAR</button>
+      <p id="loginError" class="login-error" role="alert" hidden></p>
+    </form>
+
+    <a class="login-back" href="../index.html">&larr; Volver al sitio</a>
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

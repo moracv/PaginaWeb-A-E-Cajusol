@@ -1,0 +1,11 @@
+# Dependencias
+node_modules/
+
+# Secretos y datos generados por el servidor — nunca al repositorio
+server/.env
+server/logs/
+server/data/
+
+# Sistema
+.DS_Store
+Thumbs.db

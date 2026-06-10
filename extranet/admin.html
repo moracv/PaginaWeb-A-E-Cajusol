@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Panel de Administración — Vidriería A&E Cajusol H</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/extranet.css" />
+</head>
+<body>
+
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <div class="admin-brand">
+        <div class="logo-circle logo-circle-sm" aria-hidden="true"><span class="logo-text">a<span>&</span>e</span></div>
+        <span>Panel de Administración</span>
+      </div>
+      <div class="admin-actions">
+        <a href="../index.html" target="_blank" rel="noopener" class="btn-ghost">Ver sitio</a>
+        <button type="button" id="logoutBtn" class="btn-ghost btn-logout">Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-main" id="adminMain" hidden>
+    <p id="adminStatus" class="admin-status" role="status" aria-live="polite" hidden></p>
+
+    <form id="configForm">
+      <section class="admin-card" aria-labelledby="t-hero">
+        <h2 id="t-hero">Portada (Hero)</h2>
+        <div class="grid-2">
+          <div class="form-group"><label for="f-titulo1">Título línea 1</label><input id="f-titulo1" data-path="hero.titulo1" maxlength="40" /></div>
+          <div class="form-group"><label for="f-titulo2">Título línea 2</label><input id="f-titulo2" data-path="hero.titulo2" maxlength="40" /></div>
+          <div class="form-group"><label for="f-subtitulo">Subtítulo</label><input id="f-subtitulo" data-path="hero.subtitulo" maxlength="160" /></div>
+          <div class="form-group"><label for="f-badge">Badge</label><input id="f-badge" data-path="hero.badge" maxlength="60" /></div>
+          <div class="form-group"><label for="f-cta">Botón principal</label><input id="f-cta" data-path="hero.cta" maxlength="40" /></div>
+          <div class="form-group"><label for="f-cta2">Botón secundario</label><input id="f-cta2" data-path="hero.ctaSecund" maxlength="40" /></div>
+        </div>
+      </section>
+
+      <section class="admin-card" aria-labelledby="t-empresa">
+        <h2 id="t-empresa">Datos de contacto</h2>
+        <div class="grid-2">
+          <div class="form-group"><label for="f-tel1">Teléfono 1</label><input id="f-tel1" data-path="empresa.tel1" type="tel" inputmode="tel" maxlength="20" /></div>
+          <div class="form-group"><label for="f-tel2">Teléfono 2</label><input id="f-tel2" data-path="empresa.tel2" type="tel" inputmode="tel" maxlength="20" /></div>
+          <div class="form-group"><label for="f-fijo">Teléfono fijo</label><input id="f-fijo" data-path="empresa.fijo" type="tel" inputmode="tel" maxlength="20" /></div>
+          <div class="form-group"><label for="f-whatsapp">WhatsApp (con código país)</label><input id="f-whatsapp" data-path="empresa.whatsapp" inputmode="numeric" maxlength="15" /></div>
+          <div class="form-group"><label for="f-email">Email</label><input id="f-email" data-path="empresa.email" type="email" maxlength="80" /></div>
+          <div class="form-group"><label for="f-facebook">Facebook (URL)</label><input id="f-facebook" data-path="empresa.facebook" type="url" maxlength="200" placeholder="https://facebook.com/..." /></div>
+          <div class="form-group span-2"><label for="f-ubicacion">Dirección</label><input id="f-ubicacion" data-path="empresa.ubicacion" maxlength="160" /></div>
+          <div class="form-group span-2"><label for="f-slogan">Eslogan</label><input id="f-slogan" data-path="empresa.slogan" maxlength="120" /></div>
+        </div>
+      </section>
+
+      <section class="admin-card" aria-labelledby="t-colores">
+        <h2 id="t-colores">Colores de marca</h2>
+        <div class="grid-3">
+          <div class="form-group"><label for="f-cprimario">Primario</label><input id="f-cprimario" data-path="colores.primario" type="color" /></div>
+          <div class="form-group"><label for="f-csecundario">Secundario</label><input id="f-csecundario" data-path="colores.secundario" type="color" /></div>
+          <div class="form-group"><label for="f-cacento">Acento</label><input id="f-cacento" data-path="colores.acento" type="color" /></div>
+        </div>
+      </section>
+
+      <div class="admin-save-row">
+        <button type="submit" class="btn-save" id="saveBtn">GUARDAR CAMBIOS</button>
+      </div>
+    </form>
+  </main>
+
+  <p class="admin-loading" id="adminLoading">Verificando sesión…</p>
+
+  <script src="../site-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
